@@ -1,5 +1,3 @@
-
-
 *{
   margin:0;
   padding:0;
@@ -99,6 +97,8 @@ body{
 
 /* LEFT */
 .profile{
+    position:relative;
+  overflow:visible;
   width:35%;
   background:rgba(255,255,255,10);
   position:relative;
@@ -360,27 +360,40 @@ body{
 
 
 /* --------Photo frame--------- */
+.photo-frame img{
+  width:100%;
+  height:100%;
+  object-fit:cover;        /* 🔥 image stretch nahi hogi */
+  object-position:top;
+  border-radius:14%;
+  object-fit:cover;
+  object-position:90% 20%;   /* 👈 MAGIC */
+
+}
+
 .photo-frame{
   width:250px;
-  height:200px;
-  border-radius:14%;     /* circle — square chaho to 16px */
-  position: absolute;
-  top: 215px;
-  left: 60px;
-  
+  height:240px;
+  border-radius:14%;
+  position:absolute;
+  top:194px;
+  left:50%;
+  transform:translateX(-50%);   /* 🔥 center align */
+
   background:rgba(255,255,255,0.35);
   backdrop-filter: blur(10px);
-
 
   border:2px dashed rgba(30,136,229,0.8);
   box-shadow:
     inset 0 0 25px rgba(255,255,255,0.9),
-    0px 10px 19px 1px rgba(15,23,42,0.30);
+    0px 10px 19px rgba(15,23,42,0.30);
 
   display:flex;
   align-items:center;
   justify-content:center;
+  z-index:5;
 }
+
 .content{
   width:65%;
   padding:55px;
